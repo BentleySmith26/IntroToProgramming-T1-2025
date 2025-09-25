@@ -25,6 +25,11 @@ font_size_para = 10
 para_size = 10
 para = 10
 
+#Get the number as a string
+num = input("What number do you want to square?\n> ")
 
-print(para)
-input()
+#Parse (convert) the string to an integer
+num = int(num)
+
+#Do math and print
+print(num * num)
