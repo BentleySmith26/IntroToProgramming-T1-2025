@@ -76,15 +76,7 @@ def door_opens_waiting():
         death()
 def greed():
     print("you decide to take the gold, out of the gold pops out a tiny goblin\n the goblin says:\n'wow, I can't believe you came here alone as a greedy person to take all of this gold alone... I CAST THUNDER'")
-    print("to simpily put it, you die because of your poor choice, maybe you'll succeed in another life.\nRestart?\nY or N")
-    choice = input("> ")
-    if choice == "y":
-        start_adventure()
-    elif choice == "n":
-        print("Thank you for playing my text adventure project")
-    else:
-        print("invalid input, Please use uppercase letters")
-        greed() 
+    death()
 def secret1():
     print("You return back to the village and report the gold, the town builds a statue of you in rememberence of your effect on them, you shall forever be remembered\nYou got: secret ending 1")
 
@@ -102,7 +94,7 @@ def return_to_village(): # not finished
     else:
         print("Invalid input")
         return_to_village()
-def old_man(): # Old man path
+def old_man(): # Old man path finsihed
     print("you go to speak to the old man sitting on the shady city street\nOld man:\n'oh yes, young adventurer, what brings you here to our humble village? are you here about that door I pressume? well I just so happen to know how to open this door. would you care to hear my story?\nY or N")
     choice = input("> ")
     if choice == "y":
@@ -232,11 +224,165 @@ def village_no_old():
     else:
         print("Invalid input")
         village_no_old()
-def mayor_office(): # not finished
-    print("hello")
+def mayor_office(): # Mayor path finished
+    print("You walk into the Mayor's office and see many many distracting things.\nYou're smart enough to ignore this and instead just head straight for the big man himself, The Mayor")
+    print("Mayor:\nHello there adventurer, I see the you're new here and I hope you enjoy your stay, is there anything that you need from me?")
+    print("What do you ask for?\n1. access to the village secrets\n2. What the old man is doing on the street corner\n3. ask about the door\n4. attempt to kill the Mayor")
+    choice = input("> ")
+    if choice == "1":
+        print("Mayor:\n'H-HELL NAW'")
+        print("The Mayor kicks you out of the village and you are left to just ponder at the door for eternity")
+        limbo()
+    elif choice == "2":
+        print("Mayor:\n'Oh yes, the old man, he is an odd fella. He has been here for quite some time now, he always just sits there scaring everyone off if they come near, quite odd wouldn't you say?")
+        mayor_ask()
+    elif choice == "3":
+        print("Mayor:\n'Oh yes! the door. That door has been there for generations and only one group has ever come close to revealing it's secrets. Perchance do you think that you're going to be the next to open the door?")
+        print("You:\n'Yes indeed Mayor'")
+        print("Mayor:\n'Ah alright then adventurer, I shall send you on your way to the door, I heard that the mysterious chant is decrypted on this scroll. If you can decode it all I ask is that you bring some of the treasure to our village.")
+        print("Enter Y to continue")
+        choice2 = input("> ")
+        if choice2 == "y":
+            decode()
+        else:
+            print("invalid input")
+            mayor_choice3()
+    elif choice == "4":
+        print("you lunge at the mayor with a dagger in hand and lower a devistating blow, I have no Idea why you would do that but the gods have decided to let you have another chance at life anyways")
+        start_adventure()
+    else:
+        print("invalid input")
+        mayor_ask()
+def mayor_ask():
+    print("What do you ask for?\n1. access to the village secrets\n2. What the old man is doing on the street corner\n3. ask about the door\n4. attempt to kill the Mayor")
+    choice = input("> ")
+    if choice == "1":
+        print("Mayor:\n'H-HELL NAW'")
+        print("The Mayor kicks you out of the village and you are left to just ponder at the door for eternity")
+        limbo()
+    elif choice == "2":
+        print("Mayor:\n'Oh yes, the old man, he is an odd fella. He has been here for quite some time now, he always just sits there scaring everyone off if they come near, quite odd wouldn't you say?")
+        mayor_ask()
+    elif choice == "3":
+        print("Mayor:\n'Oh yes! the door. That door has been there for generations and only one group has ever come close to revealing it's secrets. Perchance do you think that you're going to be the next to open the door?")
+        print("You:\n'Yes indeed Mayor'")
+        print("Mayor:\n'Ah alright then adventurer, I shall send you on your way to the door, I heard that the mysterious chant is decrypted on this scroll. If you can decode it all I ask is that you bring some of the treasure to our village.")
+        print("Enter Y to continue")
+        choice2 = input("> ")
+        if choice2 == "y":
+            decode()
+        else:
+            print("invalid input")
+            mayor_choice3()
+    elif choice == "4":
+        print("you lunge at the mayor with a dagger in hand and lower a devistating blow, I have no Idea why you would do that but the gods have decided to let you have another chance at life anyways")
+        start_adventure()
+    else:
+        print("invalid input")
+        mayor_ask()
+def mayor_choice3():
+    print("Mayor:\n'Oh yes! the door. That door has been there for generations and only one group has ever come close to revealing it's secrets. Perchance do you think that you're going to be the next to open the door?")
+    print("You:\n'Yes indeed Mayor'")
+    print("Mayor:\n'Ah alright then adventurer, I shall send you on your way to the door, I heard that the mysterious chant is decrypted on this scroll. If you can decode it all I ask is that you bring some of the treasure to our village.")
+    print("Enter Y to continue")
+    choice2 = input("> ")
+    if choice2 == "y":
+        decode()
+    else:
+        print("invalid input")
+        mayor_choice3()
+def limbo():
+    print("Pondering is A very Steady and Swift Way to send your thoughts Outword and Right Down to the point... (hint, type Help if you are stuck)")
+    choice = input("> ")
+    if choice.lower() == "password":
+        secret2()
+    elif choice.lower() == "help":
+        print("Look at the uppercase letters...")
+        limbo()
+    else:
+        limbo()
+def secret2():
+    print("Congrats on making it out of this limbo! you deserve this secret ending!\nYou Got: Secret Ending 2")
+def decode():
+    print("you stare at the scroll wondering how to decode this, all you see is the words 'ABRIR PUERTA'\nWhat could this possibly mean?")
+    choice = input("> ")
+    if choice.lower() == "open door":
+        door_decode()
+    else:
+        print("Maybe if you translate this code you can continue...")
+        decode()
+def door_decode():
+    print("You successfully decode the scroll and you hear the door open in the distance, as you get there you are able to walk inside and find the mass amounts of treasure\nWhat do you do?")
+    print("1. Take all of the gold for yourself\n2. Bring the gold back to the village like you promised to the Mayor\n3. close the door back up for the secret to be forever hidden with you")
+    choice = input("> ")
+    if choice == "1":
+        greed()
+    elif choice == "2":
+        print("the gold is to be safe with the village and they end up celebrating you with a huge festival, but mysteriously the old man is missing...")
+        print("Congrats! You Got: Mayor's office ending")
+    elif choice == "3":
+        print("you decide to close the door and leave the mystery for someone else to discover")
+        print("Congrats! You Got: Secret Ending 3")
+    else:
+        print("invalid input")
+        door_decode()
 def adv_guild(): # not finished
-    print("placeholder")
+    print("you decide to head to the adventurers guild to get a team to help you out")
+    print("you see three groups, the Vikings, the Dwarfs, and the Humans, which do you choose?\n1. Vikings\n2. Dwarfs\n3. Humans")
+    choice = input("> ")
+    if choice == "1":
+        print("you have chosen the Vikings, but they are not very nice people and they gang up on you to rob you although a little too rough...")
+        death()
+    elif choice == "2":
+        print("you chose the Dwarfs, they are small but come with great power")
+        dwarf()
+    elif choice == "3":
+        print("You go with the most basic choice, your own kind. all around handy and just a great group of people to go with")
+        human()
+    else:
+        print("invalid input")
+        adv_guild()
+def dwarf():
+    print("you set off towards the door to use your new team to break it down")
+    print("as you stand infront of the door your new dwarf buddies stand there and ponder while they try and think of a solution.")
+    print("What do you do?\n1. Use the power of friendship and break down the door\n2. send in your dwarfs to start digging under the door\n3. give up and cry in a corner")
+    choice = input("> ")
+    if choice == "1":
+        print("you charge at the door with your new dwarf buddies swiftly, although you fail to realize that you're between all of the dwarfs and they end up crushing you.")
+        death()
+    elif choice == "2":
+        print("you send in your new strong team to dig under the door, they dig hastily and they end up getting a nice perfect tunnel through")
+        dwarf_2()
+    elif choice == "3":
+        print("you give up like a baby and you sit in the corner and cry")
+        print("congrats? you got: baby ending")
+    else:
+        print("invalid input")
+        dwarf()
+def dwarf_2():
+    print("you stand inside the door's room that it was hiding. you and your team spot a massive pile of gold")
+    print("Do you:\n1. Split the gold among your new teammates and part ways and enjoy your new lives\n2. Try and steal all the gold for yourself before the Dwarfs get any\n3. let your new friends enjoy the gold all to themselves")
+    choice = input("> ")
+    if choice == "1":
+        print("you successfully split the gold with your allies and live a nice life")
+        print("Congrats! You Got: Normal Dwarf ending")
+    elif choice == "2":
+        print("you attempt to steal all of the gold forgetting that you're going against all the dwarfs you hired")
+        print("The dwarfs all quickly lunge at you and beat you to death")
+        death()
+    elif choice == "3":
+        print("you let all of your new friend enjoy they're new stash of gold, you feel good about yourself.")
+        print("Congrats! You Got: Dwarf good ending :)")
+    else:
+        print("invalid input")
+        dwarf_2()
+def human():
+    print("you choose the humans to team up with and get inside the door, a nice all around choice.")
+    print("you now stand before the door with your team of wonderful pals you have gotten to know quite well along the trip over")
+    print("how do you open the door?\n1. throw rocks at the door until it opens\n2. Use the power of friendship and pile drive your way into the door\n3. ponder at the door until it opens\n4. Give up and live your life with your new friends")
+    choice = input("")
     
+
 
 
 
