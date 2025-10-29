@@ -1,4 +1,3 @@
-print("in this Text Adventure, all 'Y or N' questions are to be  inputed as a lowercase y or lowercase n, this is simpily for convenience purposes.")
 def start_adventure():
     
     print("You stare at the great door in front of you")
@@ -15,18 +14,68 @@ def start_adventure():
     elif choice == "2":
         caravan() # not finished
     elif choice == "3":
-        call_friend() # not finished
+        call_friend() 
     elif choice == "4":
         wait()
+    else:
+        print("invalid input")
+        start_adventure()
+
+def caravan():
+    print("You see a caravan around the corner and you decide to run over and see what they are up to")
+    print("Ringmaster:\n'Oh hello adventurer, what brings you here?'\nYou respond talking about the door\nRingmaster:\n'Ah, I see young adventurer. Us of the caravan decided to actually go and explore the door ourselves to see if there are any hints towards opening it'")
+    print("You hop up in the Caravan and go with them back towards the door.\n You see that the door has many mysterious symbols on it which may lead to the door's opening.")
+    door_symbols()
+def door_symbols():
+    print("Where should you have a look?\n1. bottom right of the door\n2. bottom left of the door\n3. symbols on the middle on the door\n4. The symbols surrounding the door (the rim)")
+    choice = input("> ")
+    if choice == "1":
+        print("you look at the bottom right of the door and find nothing there")
+        door_symbols()
+    elif choice == "2":
+        print("you look at the bottom left, there seems to be nothing")
+        door_symbols()
+    elif choice == "3":
+        print("You stare at the symbols on the center of the door.\nSomething clicks in your head.\nYou notice that the symbols point the small crevis to the side of the door\ninside you find a lever, flicking it leads to the door swinging wide open")
+        door_caravan()
+    elif choice == "4":
+        print("You look around the edges of the door at the strange writing, you then realize that you can't read this anchient language.")
+        door_symbols()
+    else:
+        print("invalid input")
+        door_symbols()
+def door_caravan():
+    print("you stare into the door seeing the mounds of treasure, suddenly the caravan charges past you scooping up all the treasure before you could get any")
+    print("Ringmaster:\n'Oh, so you thought you'd get something? we simpily just used you like a pawn my dear boy'\nYou're filled with rage\nWhat do you do?")
+    print("1. Cast fireball to destroy all of them\n2. Give up and let them have the gold\n3. Swing at them rapidly with your sword\n4. Go boxing style and fight them to the death")
+    choice = input("> ")
+    if choice == "1":
+        print("You cast FIREBALL!\n whilst you destroyed all of the caravan members, you sadly melted all of the gold in the process.\nCongrats! You Got: Winning but at a cost Ending")
+    elif choice == "2":
+        print("You decide to surrender and just let them have the gold while you are able to escape with your life\nCongrats! You Got: Survivalist Ending")
+    elif choice == "3":
+        print("You decide to swing at them wildly with your sword, you're able to take out a few before getting taken out with a blow to the back of your head")
+        death()
+    elif choice == "4":
+        print("You decide to go boxing style and beat them all down, all of the caravan members laugh as they approach you\nSomething inside of you awakens\nYou suddenly inherrit the powers of Mike Tyson himself to take these fools out")
+        print("as you start bombarding them with your powerful and quick punches and your adept dodging ability they start to run off and leave you alone with the treasure")
+        print("Congrats! You Got: Boxing Legend Ending")
+    else:
+        print("invalid input")
+        door_caravan()
+        
+def call_friend():
+    print("You realize you have no friends")
+    print("Congrats! You Got: Friendless Ending")
 
 def wait():# Waiting path
     print("you wait for 20 minutes and nothing happens")
     print("wait some more?")
     print("Y or N")
     waiting1 = input("> ")
-    if waiting1 == "y":
+    if waiting1.lower() == "y":
         wait1()
-    elif waiting1 == "n":
+    elif waiting1.lower() == "n":
         start_adventure()
     else:
         print("invalid input, Please use lowercase letters")
@@ -36,9 +85,9 @@ def wait1():
     print("wait some more?")
     print("Y or N")
     waiting2 = input("> ")
-    if waiting2 == "y":
+    if waiting2.lower() == "y":
         wait2()
-    elif waiting2 == "n":
+    elif waiting2.lower() == "n":
         start_adventure()
     else:
         print("invalid input, Please use lowercase letters")
@@ -49,9 +98,9 @@ def wait2():
     print("would you like to step inside?")
     print("Y or N")
     waiting3 = input("> ")
-    if waiting3 == "y":
-        door_opens()
-    elif waiting3 == "n":
+    if waiting3.lower() == "y":
+        door_opens_waiting()
+    elif waiting3.lower() == "n":
         loser()
     else:
         print("invalid input, Please use lowercase letters")
@@ -80,7 +129,7 @@ def greed():
 def secret1():
     print("You return back to the village and report the gold, the town builds a statue of you in rememberence of your effect on them, you shall forever be remembered\nYou got: secret ending 1")
 
-def return_to_village(): # not finished
+def return_to_village(): # finally finished omg
     print("you return to the village\ndo you:\n1. talk to the creepy old guy\n2. enter the mayor's office\n3. go to the adventurer's guild to recruit a team\n4. jump in the well for fun")
     choice = input("> ")
     if choice == "1":
@@ -97,9 +146,9 @@ def return_to_village(): # not finished
 def old_man(): # Old man path finsihed
     print("you go to speak to the old man sitting on the shady city street\nOld man:\n'oh yes, young adventurer, what brings you here to our humble village? are you here about that door I pressume? well I just so happen to know how to open this door. would you care to hear my story?\nY or N")
     choice = input("> ")
-    if choice == "y":
+    if choice.lower() == "y":
         listen()
-    elif choice == "n":
+    elif choice.lower() == "n":
         print("you leave the old man behind as he vanishes into the darkness")
         village_no_old()
     else:
@@ -111,7 +160,7 @@ def listen():
     print("Old man:\nI suggest you go pickup a horse before you go on your journey for the key to that big door just so you can have your feet fairly rested for what may lie inside the door\nalso if the horse seller gives you any trouble just say the lost adventurer sent you")
     print("the old man suddenly vanishes leaving you stunned\nyou should probably go and get that horse for your journy ahead\nenter Y to continue")
     choice = input("> ")
-    if choice == "y":
+    if choice.lower() == "y":
         horses()
     else:
         print("invalid input")
@@ -130,9 +179,9 @@ def horses():
         print("you try and steal the horse and the Horse seller pulls out a magical rifle to put an end to you")
         print("to simpily put it, you die because of your poor choice, maybe you'll succeed in another life.\nRestart?\nY or N")
         choice = input("> ")
-        if choice == "y":
+        if choice.lower() == "y":
             start_adventure()
-        elif choice == "n":
+        elif choice.lower() == "n":
             print("Thank you for playing my text adventure project")
         else:
             print("invalid input, Please use lowercase letters")
@@ -148,7 +197,7 @@ def horse_text():
     print("Horse Seller:\nThis is Job the Horse, don't judge the name please adventurer. Now go on your journy to go find the secret of the locked door!")
     print("Enter Y to continue")
     choice = input("> ")
-    if choice == "y":
+    if choice.lower() == "y":
         path_to_cave()
     else:
         print("invalid input")
@@ -157,7 +206,7 @@ def path_to_cave():
     print("you decide to set off on your stallion Job and go to the cave, you know the journey might be difficult but-\nWait what?\nSome how you were able to get to the cave with no issues, what a pleasent surprise!")
     print("Enter Y to continue")
     choice = input("> ")
-    if choice == "y":
+    if choice.lower() == "y":
         cave()
     else:
         print("invalid input")
@@ -183,7 +232,7 @@ def key():
         print("after the bats, you decide to continue on in the cave.\nas you turn the next corner you see a chest on the ground, while it could be a little dangerous you decide to open it anyway.\nThankfully this chest was just normal and contained quite an odd shaped key, maybe this opens the massive door?")
         print("Enter Y to continue")
         choice = input("> ")
-        if choice == "y":
+        if choice.lower() == "y":
             door()
         else:
             print("invalid input")
@@ -192,7 +241,7 @@ def door():
     print("you travel to the door and see the grandness before you.\nYou walk up slowly and insert the key and turn it.\n The door opens...")
     print("Enter Y to continue")
     choice = input("> ")
-    if choice == "y":
+    if choice.lower() == "y":
             door_opens_oldman()
     else:
         print("invalid input")
@@ -242,7 +291,7 @@ def mayor_office(): # Mayor path finished
         print("Mayor:\n'Ah alright then adventurer, I shall send you on your way to the door, I heard that the mysterious chant is decrypted on this scroll. If you can decode it all I ask is that you bring some of the treasure to our village.")
         print("Enter Y to continue")
         choice2 = input("> ")
-        if choice2 == "y":
+        if choice2.lower() == "y":
             decode()
         else:
             print("invalid input")
@@ -269,7 +318,7 @@ def mayor_ask():
         print("Mayor:\n'Ah alright then adventurer, I shall send you on your way to the door, I heard that the mysterious chant is decrypted on this scroll. If you can decode it all I ask is that you bring some of the treasure to our village.")
         print("Enter Y to continue")
         choice2 = input("> ")
-        if choice2 == "y":
+        if choice2.lower() == "y":
             decode()
         else:
             print("invalid input")
@@ -286,7 +335,7 @@ def mayor_choice3():
     print("Mayor:\n'Ah alright then adventurer, I shall send you on your way to the door, I heard that the mysterious chant is decrypted on this scroll. If you can decode it all I ask is that you bring some of the treasure to our village.")
     print("Enter Y to continue")
     choice2 = input("> ")
-    if choice2 == "y":
+    if choice2.lower() == "y":
         decode()
     else:
         print("invalid input")
@@ -296,7 +345,7 @@ def limbo():
     choice = input("> ")
     if choice.lower() == "password":
         secret2()
-    elif choice.lower() == "help":
+    elif choice.lower() == "hint":
         print("Look at the uppercase letters...")
         limbo()
     else:
@@ -326,7 +375,7 @@ def door_decode():
     else:
         print("invalid input")
         door_decode()
-def adv_guild(): # not finished
+def adv_guild(): # Adv guild finished
     print("you decide to head to the adventurers guild to get a team to help you out")
     print("you see three groups, the Vikings, the Dwarfs, and the Humans, which do you choose?\n1. Vikings\n2. Dwarfs\n3. Humans")
     choice = input("> ")
@@ -380,34 +429,139 @@ def human():
     print("you choose the humans to team up with and get inside the door, a nice all around choice.")
     print("you now stand before the door with your team of wonderful pals you have gotten to know quite well along the trip over")
     print("how do you open the door?\n1. throw rocks at the door until it opens\n2. Use the power of friendship and pile drive your way into the door\n3. ponder at the door until it opens\n4. Give up and live your life with your new friends")
-    choice = input("")
-    
-
-
-
-
-
-
-
+    choice = input("> ")
+    if choice == "1":
+        print("You stupidly decide to throw rocks at the door like an absolute baffoon, who would actually expect that to work-\nHOLY SCHAMOLE\nSurprizingly the power of you and all of your teammates throwing rocks at the door carves a hole in the door allowing safe passage through")
+        human_2()
+    elif choice == "2":
+        print("You decide to use the power of friendship to drive through the door\nYour power as the new friends you have made is so strong that you absolutely obliterate the door open and have free access to what is inside")
+        human_2()
+    elif choice == "3":
+        print("You decide to ponder...")
+        ponder()
+    elif choice == "4":
+        print("You decide to just give up this journy and live a nice peaceful life with your new friends\nCongrats! You Got: BFF Ending")
+    else:
+        print("invalid input")
+        human()
+def ponder():
+    print("Any better ideas?\n1. throw rocks at the door until it opens\n2. Use the power of friendship and pile drive your way into the door\n3. ponder at the door until it opens\n4. Give up and live your life with your new friends")
+    choice = input("> ")
+    if choice == "1":
+        print("You stupidly decide to throw rocks at the door like an absolute baffoon, who would actually expect that to work-\nHOLY SCHAMOLE\nSurprizingly the power of you and all of your teammates throwing rocks at the door carves a hole in the door allowing safe passage through")
+        human_2()
+    elif choice == "2":
+        print("You decide to use the power of friendship to drive through the door\nYour power as the new friends you have made is so strong that you absolutely obliterate the door open and have free access to what is inside")
+        human_2()
+    elif choice == "3":
+        print("You decide to ponder...")
+        ponder()
+    elif choice == "4":
+        print("You decide to just give up this journy and live a nice peaceful life with your new friends\nCongrats! You Got: BFF Ending")
+    else:
+        print("invalid input")
+        human()
+def human_2():
+    print("you see the MASSIVE door ahead of you and you decide to enter.. well inside")
+    print("you see a large pile of gold\nWhat do you do?\n1. take all of the gold with your friends and go on vacation\n2. Attempt to take all of the gold for yourself\n3. take your share of the treasure and go on to live a peaceful life alone")
+    choice = input("> ")
+    if choice == "1":
+        print("you decide to go on a very nice and perfect vacation with your friends\nthe travel is going perfectly the heat is nice on your skin, nothing could go..\na massive airplain comes out of a wormhole and kills you")
+        death()
+    elif choice == "2":
+        print("you decide to attempt to take all of the gold for yourself\nthis works beautifully since all of your new friends didn't take you as some criminal. you go off although your mind feels a bit heavy")
+        print("Congrats! You Got: Betrayal Ending")
+    elif choice == "3":
+        print("You decide to part ways with your group. you spend your days living the rich life and all but you feel something is missing.")
+        print("Congrats! You Got: Missing Friendship Ending.")
+    else:
+        print("invalid input")
+        human_2()
 
 def death():
     print("to simpily put it, you die because of your poor choice, maybe you'll succeed in another life.\nRestart?\nY or N")
     choice = input("> ")
-    if choice == "y":
+    if choice.lower() == "y":
         start_adventure()
-    elif choice == "n":
+    elif choice.lower() == "n":
         print("Thank you for playing my text adventure project")
     else:
         print("invalid input, Please use lowercase letters")
         death()
 
-
-
-
-
-
-
-
-
-
 start_adventure()
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+#6767676767

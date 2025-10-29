@@ -18,13 +18,13 @@ def tally_score():
         score = score + 1
     if q4 == "1234":
         score = score + 1
-    if q5 == "goose":
+    if q5.lower() == "goose":
         score = score + 1
     if q6 == "3.141592653":
         score = score + 1
     if q7 == "206":
         score = score + 1
-    if q8 == "infinity":
+    if q8.lower() == "infinity":
         score = score + 1
     if q9 == "0":
         score = score + 1

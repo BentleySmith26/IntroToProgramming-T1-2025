@@ -20,8 +20,8 @@ noun_p2 = input("Please give another noun that is a place\n> ")
 adjective4 = input("Please give another adjective\n> ")
 noun_t2 = input("Please give another noun which is a thing\n> ")
 
-
-print(f"One time in {noun_p1} There was a person named {name}. And at around {time}, there was a wild {noun_t1} raging through {noun_p1}. Thankfully a {adjective1} {noun_a1} came to save the day! as the {adjective2} Battle came to the end, a plot twist arose and the real winner was a {adjective3} {noun_a2}. Everybody Cheered as the {noun_a2} came back from {noun_p2}. as the {adjective4} day finished everybody sat back and enjoyed a nice glass of {noun_t2}.")
+def mad_lib(np1, name, time, nt1, adj1, na1, adj2, adj3, na2, np2, adj4, nt2):
+    print(f"One time in {np1} There was a person named {name}. And at around {time}, there was a wild {nt1} raging through {np1}. Thankfully a {adj1} {na1} came to save the day! as the {adj2} Battle came to the end, a plot twist arose and the real winner was a {adj3} {na2}. Everybody Cheered as the {na2} came back from {np2}. as the {adj4} day finished everybody sat back and enjoyed a nice glass of {nt2}.")
 
 
 
