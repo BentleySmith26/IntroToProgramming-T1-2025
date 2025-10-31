@@ -50,7 +50,8 @@ def door_caravan():
     print("1. Cast fireball to destroy all of them\n2. Give up and let them have the gold\n3. Swing at them rapidly with your sword\n4. Go boxing style and fight them to the death")
     choice = input("> ")
     if choice == "1":
-        print("You cast FIREBALL!\n whilst you destroyed all of the caravan members, you sadly melted all of the gold in the process.\nCongrats! You Got: Winning but at a cost Ending")
+        print("You cast FIREBALL!\n whilst you destroyed all of the caravan members, you sadly melted all of the gold in the process.")
+        wizard()
     elif choice == "2":
         print("You decide to surrender and just let them have the gold while you are able to escape with your life\nCongrats! You Got: Survivalist Ending")
     elif choice == "3":
@@ -59,11 +60,91 @@ def door_caravan():
     elif choice == "4":
         print("You decide to go boxing style and beat them all down, all of the caravan members laugh as they approach you\nSomething inside of you awakens\nYou suddenly inherrit the powers of Mike Tyson himself to take these fools out")
         print("as you start bombarding them with your powerful and quick punches and your adept dodging ability they start to run off and leave you alone with the treasure")
-        print("Congrats! You Got: Boxing Legend Ending")
+        golden_idol()
     else:
         print("invalid input")
         door_caravan()
-        
+#67
+def wizard():
+    print("you suddenly realize the potential you have as a wizard and you go off to do good for the world.\nBut first, you must go to the wonderful wizard of this land and learn things from him")
+    print("You approach the tower and step inside, there you meet the wizard and he speaks to you in a low grumbly voice")
+    print("Wizard:\n'Oh young one, I saw you cast that magnicicent fireball and I want to take you in as my apprentice and help you grow to take out the incoming goblin army.")
+    print("Now, what spell would you like to learn?'\n1. Firestorm, Fireball yet much stronger\n2. Waterfall, I strong water attack that pushes back any foe\n3. Thunderstruck, Not only throws lighting at an enemy but also stuns them.")
+    choice = input("> ")
+    global spell
+    
+    if choice == "1":
+        print("Wizard:\n'so you chose the trusty firestorm, thats a wonderful pick my apprentice'")
+        spell = "Firestorm"
+        spell_path()
+    elif choice == "2":
+        print("Wizard:\n'so you went with the safe option of the Waterfall spell, how great! I love that one'")
+        spell = "Waterfall"
+        spell_path()
+    elif choice == "3":
+        print("Wizard:\n'Ah, my favorite! the thunderstruck spell, this one is amazing for dealing with an enemy'")
+        spell = "Thunderstruck"
+        spell_path()
+    else:
+        print("invalid input")
+        wizard()
+def spell_path():
+    global spell
+    print("with your new found spell, you decide to master is with the wizard, he teaches you all of  the upsides and downsides and you end up with a higher mastery of the spell than anyone else.")
+    print("Wizard:\n'You've done well so far, I am proud'")
+    print("as the Wizard is telling you about what he wants you to train next, you see the goblin army approaching.\nWhat do you do?")
+    print("1. Use your new spell to destroy this cluster of goblins\n2. be a baby and ask the wizard to do it for you\n3. freak out and run away to a safe place")
+
+    choice = input("> ")
+    if choice == "1":
+        print(f"You decide to use your {spell} to eliminate the enemies, and thankfully your {spell} made quick work and the goblins have perished")
+        print("Wizard:\n'Congrats my friend, You got the Spell mastery ending, I'm proud of you my boy'")
+    elif choice == "2":
+        print("you ask the wizard to deal with this, he looks are you with a menacing stare and fades away into the light\nYou realize how badly you've messed up as the goblins come nearer to take you down.")
+        death()
+    elif choice == "3":
+        print("you quickly dash through the trees as you try to escape the army, while you feel bad for leaving the wizard behind, you do realize your life is more important.")
+        print("Congrats! You Got: The Bad Spellcaster")
+    else:
+        print("invalid input")
+        spell_path()
+def golden_idol():
+    print("as you weep over the loss of all this treasure, you realize that you're capable of so much more, your boxing skill can win you the golden idol from the fighting league in this world")
+    print("as you think about it more you decide to advance your skills and go to the grandmaster of the land in his grand dojo")
+    print("You arrive to his place and you are immedietly faced with a question by the master.\nGrandmaster:\n'So young one, which fighting style would you like to learn?'")
+    print("1. Boxing, enhance your already keen ability\n2. jujizu, a cool fighting style that will definitely help later on\n3. Teakwondo, more of a defensive art but can be used for offence")
+    global style
+    choice = input("> ")
+    if choice == "1":
+        print("You have decided to master Boxing")
+        style = "Boxing"
+        final_showdown()
+    elif choice == "2":
+        print("You have decided to learn and master jujizu")
+        final_showdown()
+    elif choice == "3":
+        print("You have decided to learn and master Teakwondo")
+        final_showdown()
+    else:
+        print("invalid input")
+        golden_idol()
+def final_showdown():
+    global style
+    print("as your training finsihes you head to the stadium to claim your golden idol")
+    print("you see this competetor, 9 feet tall, massive muscles, large ego. he sends a shiver down your spine, he is the only other person who signed up for this and you realize that this may not be as easy as you once thought.")
+    print(f"What do you do?\n1. Continue on and fight this beast and his over-arching ego with your {style} Skill\n2. Turn to your pocket which has a rocket launcher to defeat this foe\n3. Run away and never come back leaving the golden idol behind")
+    c = input("> ")
+    if c == "1":
+        print(f"you decide to use your {style} Skill to defeat this massive foe, he falls to the ground and you are victorious\nYou now have the gold idol\nCongrats! You Got: The Golden Idol Ending")
+    elif c == "2":
+        print("You decide to chicken out and use your rocket launcher, this ends up defeating the enemy, you go to claim your Idol but the refs say that outside weapons are not allowed\nCongrats! You Got: Cheater Ending")
+    elif c == "3":
+        print("You decide to run away from this fight with your life just so you can life another day\nSadly the next day the massive guy has hunted you down and wants revenge for you chickening out, he then proceeds to smash you into pieces.")
+        death()
+    else:
+        print("invalid input")
+        final_showdown()
+
 def call_friend():
     print("You realize you have no friends")
     print("Congrats! You Got: Friendless Ending")
@@ -490,78 +571,3 @@ def death():
         death()
 
 start_adventure()
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-#6767676767
